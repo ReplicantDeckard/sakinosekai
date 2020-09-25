@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul {
     font-size: 1rem;
     font-weight: normal;
     font-style: normal;
+    list-style: none;
 }
 
 header > h1 {
@@ -98,19 +99,19 @@ header > h1 {
     font-size: 1.3rem;
 }
 
-#group1 {
+#group-a {
     grid-area: 1 / 1 / 2 / 3;
 }
 
-#group2 {
+#group-b {
     grid-area: 1 / 2 / 2 / 4;
 }
 
-#group3 {
+#group-c {
     grid-area: 1 / 3 / 2 / 5;
 }
 
-#group4 {
+#group-d {
     grid-area: 1 / 4 / 2 / 6;
 }
 
@@ -197,4 +198,17 @@ header > h1 {
 #play-anim:disabled {
     opacity: 0;
     cursor: default;
+}
+
+#bands {
+    margin-bottom: 2rem;
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+
+#bands li {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 0.4ch;
 }

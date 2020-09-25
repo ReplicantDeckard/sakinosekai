@@ -1,13 +1,5 @@
 'use strict';
 
-// ELEMENTS
-const title = {
-    container: document.querySelector("#title")
-};
-title.name = title.container.querySelector("h1");
-title.vitalsContainer = title.container.querySelector("dl");
-title.underline = title.container.querySelector("#underline");
-
 // CONSTANTS
 const phases = new Map();
 phases.set("a", [
@@ -72,9 +64,6 @@ const phaseDelays = [
 const secondPartDelay = 100;
 const secondPartPhaseDelay = 90;
 
-// ELEMENTS
-const playButton = document.querySelector("#play-anim");
-
 const timings = [
     (delay = 0) => ({
             delay,
@@ -84,21 +73,18 @@ const timings = [
         }),
     (delay = 0) => ({
             duration: 200,
-            // delay: delay + 100,
             delay,
             fill: "forwards",
             easing: "ease-in-out",
         }),
     (delay = 0) => ({
             duration: 500,
-            // delay: delay + 500,
             delay,
             fill: "forwards",
             easing: "ease-in-out",
         }),
     (delay = 0) => ({
             duration: 500,
-            // delay: delay + 750,
             delay,
             fill: "forwards",
             easing: "ease-out",
@@ -117,19 +103,38 @@ const timings = [
     }),
 ];
 
-let anims = [];
+// ELEMENTS
+const title = {
+    container: document.querySelector("#title")
+};
+title.name = title.container.querySelector("h1");
+title.vitalsContainer = title.container.querySelector("dl");
+title.underline = title.container.querySelector("#underline");
+const heroContainer = document.querySelector("#hero");
+
+// TODO: break up into discrete functions for readability
+// LOAD AND ASSEMBLE ANIMATION IMAGE GROUPS
+let imageGroups = new DocumentFragment();
+let anims = new Array();
 let anim = {};
 let gn = 0;
 let secondDelay = secondPartDelay;
-phases.forEach((group, g) => {
+phases.forEach((group, g) => {   
+    let groupElem = document.createElement("div");
+    groupElem.id = `group-${g}`;
     group.forEach((phase, i) => {
         anim = {
-            el: document.querySelector(`#saki${g + (i+1)}`),
+            el: document.createElement("img"),
             group: g,
             phase: i,
-            animations: []
+            animations: [],
         };
-        for (let j = 0; j < phase.length; ++j) {
+        anim.el.id = `saki${g + (i+1)}`;
+        anim.el.setAttribute("src", `images/saki-${g}-00${i+1}.webp`);
+        anim.el.setAttribute("alt", `saki-hero-animation-${g}-00${i+1}`);
+        groupElem.appendChild(anim.el);
+
+        for (let j = 0; j < phases.get(g).length; ++j) {
             if (phase[j]) {
                 let timing = 0;
                 if (g === "d") {
@@ -152,15 +157,28 @@ phases.forEach((group, g) => {
         }
         anims.push(anim);
     });
+    imageGroups.appendChild(groupElem);
     ++gn;
 });
+
+// INTERACTIVE ELEMENTS
+// const playButton = document.querySelector("#play-anim");
+const playButton = document.createElement("button");
+playButton.id = "play-anim";
+playButton.setAttribute("type", "button");
+imageGroups.appendChild(playButton);
+
+// Insert images into DOM
+heroContainer.appendChild(imageGroups);
+
+// hide no-js fallback still image
+document.querySelector("#hero-fallback").style.display = "none";
 
 let setStartState = (anims) => {
     anims.forEach((anim) => {
         anim.el.style.opacity = 0;
     });
     title.name.style.opacity = 0;
-    // title.vitalsContainer.style.opacity = 0;
     title.underline.style.opacity = 0;
 };
 
@@ -229,19 +247,22 @@ let playTextAnimations = () => {
 let playFullAnimations = () => playAnimationPartOne().finished.then(() => playAnimationPartTwo().finished);
 
 // ANIMATION SEQUENCE
-setStartState(anims);
-playButton.setAttribute("disabled", true);
-playFullAnimations().then(() => {
-    playButton.removeAttribute("disabled");
-    playTextAnimations();
-});
-
-// PLAY BUTTON EVENTS
-playButton.addEventListener("click", () => {
+let fireAnimationSequence = () => {
     setStartState(anims);
     playButton.setAttribute("disabled", true);
     playFullAnimations().then(() => {
         playButton.removeAttribute("disabled");
         playTextAnimations();
     });
+};
+
+// PLAY BUTTON EVENTS
+playButton.addEventListener("click", () => {
+    fireAnimationSequence();
+});
+
+// TODO: specifically wait for images to load and #hero DOM to be parsed instead of full document load
+// wait for document to completely load before starting animation sequence
+window.addEventListener("load", () => {
+    fireAnimationSequence();
 });
