@@ -197,6 +197,7 @@ let playAnimationPartOne = () => {
 let playAnimationPartTwo = () => {
     for (let i = anims.length-1; i >= 0; --i) {
         if (anims[i].animations[1]) {
+            anims[i].el.removeAttribute("style"); // fixes Firefox issue
             anims[i].animations[1].play();
             anims[i].animations[1].finished.then((a) => {
                 a.commitStyles();
