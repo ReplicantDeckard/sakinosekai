@@ -1,3 +1,9 @@
+/* VARIABLES */
+:root {
+    --main-text-color: black;
+    --hero-title-color: #fff2a8;
+    --header-footer-bg-color: #02444a;
+}
 
 body {
     font-size: 1rem;
@@ -8,6 +14,7 @@ body {
 header {
     margin: 0;
     padding: 0;
+    border-top: 1px solid var(--header-footer-bg-color);
 }
 
 h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul {
@@ -18,6 +25,7 @@ h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul {
     font-weight: normal;
     font-style: normal;
     list-style: none;
+    /* color: var(--main-text-color); */
 }
 
 header > h1 {
@@ -30,14 +38,14 @@ header > h1 {
     font-style: italic;
     border-left: 2px solid gray;
     color: white;
-    background-color: #02444a;
+    background-color: var(--header-footer-bg-color);
     text-align: right;
 }
 
 #cover {
     clear: both;
-    border-top: 4px solid gray;
-    border-bottom: 4px solid gray;
+    border-top: 3px solid var(--header-footer-bg-color);
+    border-bottom: 3px solid var(--header-footer-bg-color);
 }
 
 #hero, #cover {
@@ -79,7 +87,7 @@ header > h1 {
     font-size: 6rem;
     letter-spacing: 1ch;
     margin-right: -1ch;
-    color: #fff2a8;
+    color: var(--hero-title-color);
 }
 
 #title > div {
@@ -211,4 +219,30 @@ header > h1 {
     text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: 0.4ch;
+}
+
+footer {
+    background: no-repeat left top / 18% url("images/footer-01.webp");
+    /* background-color: darkgrey; */
+    /* padding: 1rem 0 1rem 20%; */
+    padding: 1rem 0 3rem 22%;
+    margin-top: 10rem;
+    /* border-top: 1px solid var(--header-footer-bg-color); */
+    border-right: 50px solid var(--header-footer-bg-color);
+    border-bottom: 1px solid var(--header-footer-bg-color);
+    border-top: 1px solid darkgrey;
+}
+
+/* footer ul {
+    width: 30%;
+    margin: 1rem 20% 1rem;
+} */
+
+footer li {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: darkgrey;
+    /* color: white; */
+    /* text-align: center; */
 }

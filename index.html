@@ -1,88 +1,29 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="title" content="SakinoSekai. A birthday celebration of Japanese guitarist SAKI.">
-    <meta name="description" content="SakinoSekai. A birthday celebration of Japanese guitarist SAKI.">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.png">
-    <!-- <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.11ty.dev/">
-    <meta property="og:site_name" content="Eleventy">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:title" content="Layouts">
-    <meta property="og:description" content="Eleventy is a simpler static site generator.">
-    <meta property="og:image" content="https://www.11ty.dev/img/open-graph.jpg">
-    <meta property="og:image:width" content="1280">
-    <meta property="og:image:height" content="640">
-    <meta property="og:image:alt" content="The 11ty logo text with a small floating possum on a balloon">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@eleven_ty">
-    <meta property="twitter:creator" content="@zachleat">
-    <meta property="twitter:url" content="https://www.11ty.dev/">
-    <meta property="twitter:title" content="Layouts | Eleventy, a simpler static site generator.">
-    <meta property="twitter:description" content="Eleventy is a simpler static site generator.">
-    <meta property="twitter:image" content="https://www.11ty.dev/img/open-graph.jpg">
-    <meta property="twitter:image:alt" content="The 11ty logo text with a small floating possum on a balloon"> -->
-    <title>SAKI ANIM TEST</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+{% include _head.html %}
 <body>
     <header>
         <h1>sakiのsekai</h1>
     </header>
     <main id="main">
-        <div id="cover">
-            <div id="hero">
-                <script>
-                    const hero = document.querySelector("#hero");
-                    hero.classList.add("hide");
-                    window.addEventListener("load", () => {
-                        hero.classList.remove("hide");
-                    });
-                </script>
-                <img src="images/saki-anim-hero.webp" id="hero-fallback" alt="Saki in kimono playing guitar passionately">
-                <!-- <div id="group1">
-                    <img src="images/saki-a-001.webp" alt="sakia1" id="sakia1">
-                    <img src="images/saki-a-002.webp" alt="sakia2" id="sakia2">
-                    <img src="images/saki-a-003.webp" alt="sakia3" id="sakia3">
-                    <img src="images/saki-a-004.webp" alt="sakia4" id="sakia4">
-                </div>
-                <div id="group2">
-                    <img src="images/saki-b-001.webp" alt="sakib1" id="sakib1">
-                    <img src="images/saki-b-002.webp" alt="sakib2" id="sakib2">
-                    <img src="images/saki-b-003.webp" alt="sakib3" id="sakib3">
-                    <img src="images/saki-b-004.webp" alt="sakib4" id="sakib4">
-                </div>
-                <div id="group3">
-                    <img src="images/saki-c-001.webp" alt="sakic1" id="sakic1">
-                    <img src="images/saki-c-002.webp" alt="sakic2" id="sakic2">
-                    <img src="images/saki-c-003.webp" alt="sakic3" id="sakic3">
-                    <img src="images/saki-c-004.webp" alt="sakic4" id="sakic4">
-                </div>
-                <div id="group4">
-                    <img src="images/saki-d-001.webp" alt="sakid1" id="sakid1">
-                    <img src="images/saki-d-002.webp" alt="sakid2" id="sakid2">
-                    <img src="images/saki-d-003.webp" alt="sakid3" id="sakid3">
-                </div>
-                <button id="play-anim" type="button">play</button> -->
-                <section id="title">
-                    <h1>Saki</h1>
-                    <div id="underline">
-                    <dl>
-                        <dt>生年月日 / Date of birth</dt><dd>10月4日 / 4 OCT</dd>
-                        <dt>出生地 / Place of birth</dt><dd>東京 / Tokyo</dd>
-                        <dt>血液型 / Blood type</dt><dd>AB</dd>
-                    </dl>
-                    </div>
-                </section>
-            </div>
-        </div>
+        {% include _hero.html %}
         <ul id="bands">
             <li>Nemophila</li>
             <li>Mary&rsquo;s Blood</li>
             <li>Amahiru</li>
         </ul>
+        {% include _intro.md %}
+        {% include _reminisce.md %}
+        {% include _author-testimonial.md %}
 </main>
     <script src="script.js"></script>
+    <footer>
+        <ul>
+            <li>sakiのsekai is a fan-produced site.</li>
+            <li>designed and developed by <br>Rafe Thompson (<a href="https://twitter.com/ReplicantDeckrd" target="_blank">@replicantdeckrd</a>)</li>
+            <li>built with 11ty. hosted by surge.</li>
+            <li>report a bug.</li>
+        </ul>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<div id="cover">
+    <div id="hero">
+        <script>
+            const hero = document.querySelector("#hero");
+            hero.classList.add("hide");
+            window.addEventListener("load", () => {
+                hero.classList.remove("hide");
+            });
+        </script>
+        <img src="images/saki-anim-hero.webp" id="hero-fallback" alt="Saki in kimono playing guitar passionately">
+        <section id="title">
+            <h1>Saki</h1>
+            <div id="underline">
+            <dl>
+                <dt>生年月日 / Date of birth</dt><dd>10月4日 / 4 OCT</dd>
+                <dt>出生地 / Place of birth</dt><dd>東京 / Tokyo</dd>
+                <dt>血液型 / Blood type</dt><dd>AB</dd>
+            </dl>
+            </div>
+        </section>
+    </div>
+</div>
