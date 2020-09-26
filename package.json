@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/ReplicantDeckard/sakinosekai#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+    "@11ty/eleventy": "^0.11.0",
+    "eleventy-plugin-markdown-shortcode": "^1.1.0"
   }
 }

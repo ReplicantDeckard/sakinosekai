@@ -5,22 +5,35 @@
     <header>
         <h1>sakiのsekai</h1>
     </header>
-    <main id="main">
+    <main>
         {% include _hero.html %}
         <ul id="bands">
             <li>Nemophila</li>
             <li>Mary&rsquo;s Blood</li>
             <li>Amahiru</li>
         </ul>
-        {% include _intro.md %}
-        {% include _reminisce.md %}
-        {% include _author-testimonial.md %}
+        <section id="introduction" class="bilingual">
+            <h1>a guitarist&rsquo;s birthday</h1>
+            <div lang="en">
+                {% include _intro_en.html %}
+            </div>
+            <div lang="jp">
+                {% include _intro_jp.html %}
+            </div>
+        </section>
+        <section id="reminisce" class="bilingual">
+        {% include _reminisce.html %}
+        </section>
+        <section id="author-testimonial" class="bilingual">
+        {% include _author-testimonial.html %}
+        </section>
 </main>
     <script src="script.js"></script>
     <footer>
         <ul>
             <li>sakiのsekai is a fan-produced site.</li>
-            <li>designed and developed by <br>Rafe Thompson (<a href="https://twitter.com/ReplicantDeckrd" target="_blank">@replicantdeckrd</a>)</li>
+            <li>designed and developed by <br>
+                Rafe Thompson (<a href="https://twitter.com/ReplicantDeckrd" target="_blank">@replicantdeckrd</a>).</li>
             <li>built with 11ty. hosted by surge.</li>
             <li>report a bug.</li>
         </ul>

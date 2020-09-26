@@ -1,3 +1,5 @@
+const markdownShortCode = require("eleventy-plugin-markdown-shortcode");
+
 module.exports = function(eleventyConfig) {
     // eleventyConfig.htmlTemplateEngine("njk");
     eleventyConfig.addPassthroughCopy("images");
@@ -5,4 +7,5 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("*.css");
     eleventyConfig.addWatchTarget("*.js");
     eleventyConfig.addWatchTarget("*.css");
+    eleventyConfig.addPlugin(markdownShortCode);
 };
