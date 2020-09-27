@@ -256,25 +256,55 @@ footer li {
 }
 
 main > section {
-    margin: 4rem 15%;
+    margin: 6rem 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: minmax(1.66rem, auto) 1fr;
-    /* grid-column-gap: 10ch; */
 }
 
 main > section > h1 {
-    font-size: 1.66rem;
+    font-size: 1.85rem;
     grid-area: 1 / 1 / 2 / 3;
     margin: 0;
     padding: 0;
 }
 
-main > section p {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    margin-top: 1.1rem;
+main > section.story div {
     padding: 0 5ch;
+}
+
+main > section.story p {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-top: 1.1rem;
+    clear: left;
+}
+
+main > section.story img {
+    max-width: 25vw;
+    margin: 1.5rem 1rem 1.5rem -5vw;
+    transform: rotate(-2deg);
+    padding: 10px;
+    border: 1px solid lightgray;
+    background: white;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main > section.story blockquote {
+    padding: 2rem 0.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--header-footer-bg-color);
+    border-top: 1px solid var(--header-footer-bg-color);
+    border-bottom: 1px solid var(--header-footer-bg-color);
+    background-color: white;
+    width: 20vw;
+}
+
+main > section.story blockquote > p {
+    margin: 0;
+    padding: 0;
 }
 
 main > section div[lang="en"] {

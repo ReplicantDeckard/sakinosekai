@@ -12,19 +12,25 @@
             <li>Mary&rsquo;s Blood</li>
             <li>Amahiru</li>
         </ul>
-        <section id="introduction" class="bilingual">
+        <section id="introduction" class="bilingual, story">
             <h1>a guitarist&rsquo;s birthday</h1>
             <div lang="en">
                 {% include _intro_en.html %}
             </div>
-            <div lang="jp">
-                {% include _intro_jp.html %}
+            <div lang="ja">
+                {% include _intro_ja.html %}
             </div>
         </section>
-        <section id="reminisce" class="bilingual">
-        {% include _reminisce.html %}
+        <section id="look-back" class="bilingual, story">
+            <h1>a look back</h1>
+            <div lang="en">
+                {% include _look-back_en.html %}
+            </div>
+            <div lang="ja">
+                {% include _look-back_ja.html %}
+            </div>
         </section>
-        <section id="author-testimonial" class="bilingual">
+        <section id="author-testimonial" class="bilingual, story">
         {% include _author-testimonial.html %}
         </section>
 </main>
