@@ -15,7 +15,7 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
-    min-width: 950px;
+    /* min-width: 950px; */
 }
 
 h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul, time, q {
@@ -324,6 +324,12 @@ main > section#look-back {
     background: no-repeat left / 10vw linear-gradient(to right, white, #e7e9e9) #e7e9e9;
 }
 
+main > section#look-back:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
 main > section#look-back h1 {
     background: url("images/nemophila-backdrop-banner-yellow.webp") var(--timeline-support-color) right bottom / 90% no-repeat;
     border-top: 2px solid darkgrey;
@@ -337,6 +343,13 @@ dl.timeline {
     border-left: 1px dotted var(--header-footer-bg-color);
     padding-top: 2vh;
     background-color: white;
+}
+
+dl.timeline:after {
+    clear: both;
+    display: block;
+    content: "";
+    height: 10vh;
 }
 
 dl.timeline > dt {
@@ -437,8 +450,8 @@ dl.timeline > dd > cite > a {
 dl.timeline > dd > img.cheki {
     float: right;
     clear: right;
-    margin-right: -28vw;
-    max-width: 20vw;
+    margin-right: -32vw;
+    max-width: 25vw;
     min-width: 250px;
 }
 
@@ -451,6 +464,7 @@ dl.timeline > dd > h2 {
 
 dl.timeline > dd > p {
     margin-left: 60px;
+    font-size: 1rem;
 }
 
 q[lang="ja"]::before {
