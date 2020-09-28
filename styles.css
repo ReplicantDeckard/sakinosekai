@@ -322,6 +322,7 @@ main > section#look-back {
     margin-left: 0;
     margin-right: 0;
     background: no-repeat left / 10vw linear-gradient(to right, white, #e7e9e9) #e7e9e9;
+    border-bottom: 2px solid darkgrey;
 }
 
 main > section#look-back:after {
