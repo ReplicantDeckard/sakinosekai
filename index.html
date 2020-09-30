@@ -12,8 +12,9 @@
             <li>Mary&rsquo;s Blood</li>
             <li>Amahiru</li>
         </ul>
+        <h1 id="about-site">a fan site celebrating the birthday of a wonderful guitarist</h1>
         <section id="introduction" class="bilingual story">
-            <h1>a guitarist&rsquo;s birthday</h1>
+            <h1>a guitarist&rsquo;s story</h1>
             <div lang="en">
                 {% include _intro_en.html %}
             </div>
@@ -25,22 +26,35 @@
             <h1>回顧 / a look back</h1>
             {% include _look-back_ja.html %}
         </section>
+        <section id="birthday-wishes" class="bilingual story">
+            <h1>お誕生日おめでとうね！</h1>
+            <h2 id="author">Rafe Thompson <a href="https://twitter.com/ReplicantDeckrd" target="_blank">@replicantdeckrd</a></h2>
+            <div lang="en">
+                {% include _birthday-wishes_en.html %}
+            </div>
+            <div lang="ja">
+                {% include _birthday-wishes_ja.html %}
+            </div>
+        </section>
         <section id="video-gallery">
             <h1>動画陳列 / video gallery</h1>
-            {% include _video-gallery.html %}
-        </section>
-        <section id="author-testimonial" class="story">
-        {% include _author-testimonial.html %}
+            <ul id="gallery-list">
+                {% include _video-gallery.html %}
+            </ul>
         </section>
 </main>
     <script src="script.js"></script>
     <footer>
         <ul>
-            <li>sakiのsekai is a fan-produced site.</li>
+            <li>sakiのsekai is a fan-produced site. <br>
+                It is not endorsed by or affiliated with Saki.
+            </li>
             <li>designed and developed by <br>
                 Rafe Thompson (<a href="https://twitter.com/ReplicantDeckrd" target="_blank">@replicantdeckrd</a>).</li>
             <li>built with 11ty. hosted by surge.</li>
-            <li>report a bug.</li>
+            <li>Photo credits: <a href="https://twitter.com/_chakixx_" target="_blank">@_chakixx_</a>, <a href="https://twitter.com/howei66" target="_blank">@route66hw</a><br>
+                all photos the copyright of their respective owners.
+            </li>
         </ul>
     </footer>
 </body>

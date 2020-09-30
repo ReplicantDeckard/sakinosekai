@@ -7,18 +7,14 @@
     --timeline-support-color: #fffeea;
 }
 
-/* FONTS */
-
-
-
 body {
     font-size: 1rem;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    /* min-width: 950px; */
+    max-width: 1920px;
 }
 
-h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul, time, q {
+h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul, time, q, a {
     margin: 0;
     padding: 0;
     text-indent: 0;
@@ -26,6 +22,11 @@ h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul, time, q {
     font-weight: normal;
     font-style: normal;
     list-style: none;
+    text-decoration: none;
+}
+
+a:visited, a:hover {
+    color: inherit;
 }
 
 header {
@@ -70,10 +71,11 @@ header > h1 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
+    height: 70vh;
 }
 
 #hero img {
-    max-height: 700px;
+    max-height: 70vh;
 }
 
 #hero > div {
@@ -221,7 +223,7 @@ header > h1 {
 }
 
 #bands {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     display: flex;
     padding: 20px;
     justify-content: space-evenly;
@@ -233,6 +235,28 @@ header > h1 {
     letter-spacing: 0.4ch;
 }
 
+h2#attribution {
+    /* text-align: right; */
+    color: gray;
+    font-size: 0.9rem;
+    font-style: italic;
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
+    /* margin-right: 3vw;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; */
+}
+
+h1#about-site {
+    font-size: 1.6rem;
+    font-style: italic;
+    letter-spacing: 0.4ch;
+    text-align: center;
+    margin: 5vh 0 8vh;
+    color: #6d0303;
+}
+
 footer {
     background: no-repeat left top / 18% url("images/footer-01.webp");
     padding: 1rem 0 3rem 22%;
@@ -242,7 +266,7 @@ footer {
     border-top: 1px solid darkgrey;
 }
 
-footer li {
+footer li, footer li a {
     margin-top: 0.5rem;
     font-size: 0.8rem;
     font-weight: bold;
@@ -321,6 +345,7 @@ main > section div[lang="en"] {
 main > section#look-back {
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 0;
     background: no-repeat left / 10vw linear-gradient(to right, white, #e7e9e9) #e7e9e9;
     border-bottom: 2px solid darkgrey;
 }
@@ -476,19 +501,97 @@ q[lang="ja"]::after {
     content: "」";
 }
 
-blockquote.pullquote {
+main > section#video-gallery {
+    margin-top: 8vh;
+}
+
+ul#gallery-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    margin: 2vh 5vw 0;
+}
+
+ul#gallery-list li {
+    position: relative;
+}
+
+ul#gallery-list li a {
+    display: block;
+    max-width: 480px;
+    z-index: 99;
+    position: relative;
+    opacity: 0.6;
+    transition: 0.2s ease opacity;
+    border: 1px solid black;
+}
+
+ul#gallery-list li img {
     width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+}
+
+ul#gallery-list li a:hover {
+    opacity: 1;
+}
+
+ul#gallery-list li a::after {
+    content: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='YouTube_Icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 1024 721' enable-background='new 0 0 1024 721' xml:space='preserve'%3E%3Cpath id='Triangle' fill='%23FFFFFF' d='M407,493l276-143L407,206V493z'/%3E%3Cpath id='The_Sharpness' opacity='0.12' fill='%23420000' d='M407,206l242,161.6l34-17.6L407,206z'/%3E%3Cg id='Lozenge'%3E%3Cg%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='512.5' y1='719.7' x2='512.5' y2='1.2' gradientTransform='matrix(1 0 0 -1 0 721)'%3E%3Cstop offset='0' style='stop-color:%23E52D27'/%3E%3Cstop offset='1' style='stop-color:%23BF171D'/%3E%3C/linearGradient%3E%3Cpath fill='url(%23SVGID_1_)' d='M1013,156.3c0,0-10-70.4-40.6-101.4C933.6,14.2,890,14,870.1,11.6C727.1,1.3,512.7,1.3,512.7,1.3 h-0.4c0,0-214.4,0-357.4,10.3C135,14,91.4,14.2,52.6,54.9C22,85.9,12,156.3,12,156.3S1.8,238.9,1.8,321.6v77.5 C1.8,481.8,12,564.4,12,564.4s10,70.4,40.6,101.4c38.9,40.7,89.9,39.4,112.6,43.7c81.7,7.8,347.3,10.3,347.3,10.3 s214.6-0.3,357.6-10.7c20-2.4,63.5-2.6,102.3-43.3c30.6-31,40.6-101.4,40.6-101.4s10.2-82.7,10.2-165.3v-77.5 C1023.2,238.9,1013,156.3,1013,156.3z M407,493V206l276,144L407,493z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    filter: saturate(0);
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    z-index: 50;
+    display: block;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.2s opacity;
+    z-index: 50;
+}
+
+main > section#birthday-wishes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(1.66rem, auto) minmax(1.25rem, auto) 1fr;
+    margin-top: 10vh;
+}
+
+main > section > h1 {
+    font-size: 1.85rem;
+    grid-area: 1 / 1 / 2 / 3;
     margin: 0;
-    background: black no-repeat right bottom url("images/house-lights-01.webp");
-    padding: 1.4rem 40vw 1.4rem 20vw;
-    box-sizing: border-box;
-    min-height: 125px;
-    color: white;
-    border-top: 2px solid var(--header-footer-bg-color);
-    border-top: 2px solid var(--header-footer-bg-color);
+    padding: 0;
+    margin-left: 5vw;    
 }
 
-blockquote.pullquote p {
-    font-size: 1.5rem;
+main > section#birthday-wishes h2 {
+    grid-area: 2 / 1 / 3 / 3;
+    font-size: 1.33rem;
+    margin-left: 6vw;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
 }
 
+main > section#birthday-wishes h2 a {
+    font-family: sans-serif;
+    color: darkgrey;
+}
+
+main > section#birthday-wishes h2:before {
+    content: "";
+    width: 5vw;
+    height: 5vw;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2vw;
+    margin-left: -6vw;
+    background: no-repeat center / contain url("images/avatar-saki-and-eye.jpg");
+    border-radius: 50%;
+    border: 5px solid var(--header-footer-bg-color);
+}
