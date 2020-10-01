@@ -264,6 +264,8 @@ playButton.addEventListener("click", () => {
 
 // TODO: specifically wait for images to load and #hero DOM to be parsed instead of full document load
 // wait for document to completely load before starting animation sequence
-window.addEventListener("load", () => {
-    fireAnimationSequence();
-});
+// window.addEventListener("load", () => {
+//     fireAnimationSequence();
+// });
+heroContainer.classList.remove("hide");
+fireAnimationSequence();

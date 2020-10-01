@@ -14,6 +14,10 @@ body {
     max-width: 1920px;
 }
 
+main {
+    overflow: hidden;
+}
+
 h1, h2, h3, h4, h5, h6, p, dd, dt, dl, li, ul, time, q, a {
     margin: 0;
     padding: 0;
@@ -45,7 +49,7 @@ header:after {
 
 header > h1 {
     float: right;
-    padding: 15px;
+    padding: 0.8rem;
     margin: 0;  
     font-size: 1.1rem;
     line-height: 1.1rem;
@@ -223,9 +227,9 @@ header > h1 {
 }
 
 #bands {
-    margin-bottom: 3rem;
+    /* margin-bottom: 2rem; */
     display: flex;
-    padding: 20px;
+    padding: 2rem 2rem 0;
     justify-content: space-evenly;
 }
 
@@ -253,7 +257,7 @@ h1#about-site {
     font-style: italic;
     letter-spacing: 0.4ch;
     text-align: center;
-    margin: 5vh 0 8vh;
+    margin: 8vh 0;
     color: #6d0303;
 }
 
@@ -357,7 +361,8 @@ main > section#look-back:after {
 }
 
 main > section#look-back h1 {
-    background: url("images/nemophila-backdrop-banner-yellow.webp") var(--timeline-support-color) right bottom / 90% no-repeat;
+    /* background: url("images/nemophila-backdrop-banner-yellow.webp") var(--timeline-support-color) right bottom / 90% no-repeat; */
+    background: url("images/timeline-header-backdrop-02.jpg") #fffbd9 0% 20% / 90% no-repeat;
     border-top: 2px solid darkgrey;
     border-bottom: 2px solid darkgrey;
     margin: 0;
@@ -477,15 +482,7 @@ dl.timeline > dd > a.cheki-link {
     float: right;
     clear: right;
     margin-right: -32vw;
-    /* display: block; */
 }
-
-/* dl.timeline > dd > img.cheki {
-    float: right;
-    clear: right;
-    margin-right: -32vw;
-    min-width: 250px;
-} */
 
 dl.timeline > dd > h2 {
     font-size: 1rem;
@@ -600,4 +597,185 @@ main > section#birthday-wishes h2:before {
     background: no-repeat center / contain url("images/avatar-saki-and-eye.jpg");
     border-radius: 50%;
     border: 5px solid var(--header-footer-bg-color);
+}
+
+@media only screen and (max-width: 1100px) {
+    #hero {
+        height: 50vh;
+    }
+    #hero div {
+        height: 50vh;
+    }
+    #hero img {
+        height: 50vh;
+    }
+    #hero #title {
+        margin-top: 10vh;
+    }
+}
+
+@media only screen and (max-width: 824px) {
+    html {
+        font-size: 75%;
+    }
+    header h1 {
+        font-size: 4vh;
+        padding: 0;
+        margin: 2vh 1vw;
+    }
+    #cover {
+        padding-top: 0;
+    }
+    #hero {
+        height: 92vh;
+    }
+    #hero div {
+        height: 92vh;
+    }
+    #hero img {
+        height: 92vh;
+        max-height: 92vh;
+    }
+    img#saki-amahiru-portrait {
+        max-width: 60vh;
+        margin-right: -8vw;
+    }
+    dl.timeline > dd {
+        width: 48vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 75%;
+    }
+    header h1 {
+        font-size: 0.8rem;
+    }
+    #hero {
+        height: 40vh;
+    }
+    #hero div {
+        height: 40vh;
+    }
+    #hero img {
+        height: 40vh;
+    }
+    #hero #title {
+        margin-top: 5vh;
+    }
+    #title h1 {
+        font-size: 3.5rem;
+    }
+    #title dt, #title dd {
+        font-size: 1rem;
+    }
+    #bands {
+        margin-bottom: 2rem;
+        justify-content: space-between;
+    }
+    #bands li {
+        font-size: 1rem;
+    }
+    h1#about-site {
+        font-size: 1.3rem;
+        margin: 4vh 5vw 6vh;
+    }
+    main > section > h1 {
+        font-size: 1.4rem;
+        margin-bottom: 2vh;
+    }
+    main > section.bilingual {
+        grid-template-columns: 1fr;
+        /* overflow: hidden; */
+    }
+    main > section.story > div[lang="en"] {
+        display: none;
+    }
+    main > section.story p {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    img#saki-amahiru-portrait {
+        margin-right: -15vw;
+        max-height: 50vh;
+    }
+    dl.timeline > dt:after {
+        width: 15px;
+        height: 15px;
+        right: -7.5px;
+    }
+    dl.timeline > dt > time {
+        font-size: 1.3rem;
+    }
+    dl.timeline > dt > time:after {
+        border: none;
+    }
+    dl.timeline > dd {
+        width: auto;
+        margin-right: 5vw;
+        padding-right: 30px;
+        /* display: grid;
+        grid-template-columns: 75vw;
+        grid-template-rows: 1fr 1fr 1fr 1fr; */
+        display: flex;
+        flex-direction: column;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    dl.timeline > dd > time {
+        /* grid-area: 1 / 1 / 2 / 2; */
+        margin-top: -0.8rem;
+        display: block;
+        width: 8vw;
+        order: 0;
+    }
+    dl.timeline > dd > h2 {
+        /* grid-area: 1 / 2 / 2 / 3; */
+        order: 1;
+    }
+    dl.timeline > dd > p {
+        margin-left: 5vw;
+        /* grid-area: 1 / 4 / 2 / 5; */
+        order: 3;
+    }
+    dl.timeline > dd > a.cheki-link {
+        float: none;
+        margin-right: 0;
+        /* grid-area: 1 / 3 / 2 / 4; */
+        order: 2;
+        text-align: right;
+        padding: 1rem 0;
+    }
+    main > section.story img.cheki {
+        max-width: 66vw;
+    }
+    dl.timeline > dd > cite > a {
+        top: 5px;
+        right: 5px;
+    }
+    main > section#birthday-wishes {
+        grid-template-columns: 1fr;
+        /* overflow: hidden; */
+    }
+    main > section#birthday-wishes h2:before {
+        width: 10vw;
+        height: 10vw;
+        margin-left: -14vw;
+    }
+    section#video-gallery {
+        margin: 0 5vw 0;
+    }
+    ul#gallery-list {
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        grid-template-columns: none;
+    }
+    ul#gallery-list li {
+        flex: 0 0 30%;
+        margin: 0;
+        padding: 0;
+    }
 }
