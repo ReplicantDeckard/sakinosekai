@@ -11,7 +11,7 @@ let htm = "";
 // videoIDs.reverse();
 
 videoIDs.forEach((id) => {
-    htm += `<li><a href="https://www.youtube.com/watch?v=${id}" target="_blank"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="thumbnail of video ${id}"></a></li>`;
+    htm += `<li><a href="https://www.youtube.com/watch?v=${id}" target="_blank"><img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="thumbnail of video ${id}" loading="lazy" decoding="async"></a></li>`;
 });
 
 fs.writeFileSync(path.resolve("_includes/_video-gallery.html"), htm, "utf8");
