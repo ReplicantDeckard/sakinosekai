@@ -1,4 +1,7 @@
 README.md
-build-gallery.js
-tools
 robots.txt
+postcss.config.js
+build-gallery.js
+video-ids.json
+build-dist.sh
+publish.js
